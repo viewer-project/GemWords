@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -tap-highlight-color: transparent;
 }
 
 html {
@@ -529,12 +531,12 @@ main {
     left: -24px;
 }
 
-.exercises__nav--prev img {
-    transform: rotate(180deg);
-}
-
 .exercises__nav--next {
     right: -24px;
+}
+
+.exercises__nav--prev img {
+    transform: rotate(180deg);
 }
 
 .exercises__slide {
@@ -1543,16 +1545,17 @@ main {
     gap: 12px;
     width: 100%;
     max-width: 376px;
-    height: 240px;
+    height: 240px;  
     background: #F3F4F6;
     border-radius: 16px;
     flex-shrink: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    transition: all .3s ease;
 }
 
 .testimonials__slide--expanded {
-    height: auto !important;
+    height: auto;
     min-height: 240px;
 }
 
@@ -1608,11 +1611,13 @@ main {
     overflow: hidden;
     margin: 0;
     position: relative;
+    transition: all .3 ease;
 }
 
 .testimonials__text--expanded {
     height: auto !important;
-    overflow: visible !important;
+    overflow: visible;
+    transition: all .3s ease;
 }
 
 .testimonials__slide--short .testimonials__text {
@@ -2796,7 +2801,6 @@ main {
 
     .exercises__wrapper {
         width: calc(100% + 16px);
-        overflow: hidden;
         margin: 24px 0 0 16px;
     }
 
@@ -2807,6 +2811,14 @@ main {
     .exercises__slide {
         min-width: 200px;
         height: 410px;
+    }
+
+    .exercises__nav--prev {
+        left: -16px;
+    }
+
+    .exercises__nav--next {
+        right: 0;
     }
 
     .exercises__card {
@@ -2986,10 +2998,6 @@ main {
         line-height: 13px;
     }
 
-    .exercises__nav {
-        display: none;
-    }
-
     .exercises__badges,
     .promo__badges {
         gap: 12px;
@@ -3095,8 +3103,12 @@ main {
         visibility: hidden;
     }
 
-    .interests__nav-btn {
-        display: none;
+    .interests__nav-btn--prev {
+        left: 8px;
+    }
+
+    .interests__nav-btn--next {
+        right: 8px;
     }
 
     .interests__caption {
@@ -3308,7 +3320,7 @@ main {
     .testimonials__slide {
         max-width: none;
         width: calc((100% - 12px) / 2);
-        height: 288px;
+        min-height: 288px;
         padding: 24px 32px;
     }
 
